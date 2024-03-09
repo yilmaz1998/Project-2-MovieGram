@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Movie</title>
     <link rel="stylesheet" href="/css/edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <%- include('./partials/nav.ejs') %>
     <h1>Edit Movie</h1>
     <form method="POST" action="/movie/<%= data._id %>?_method=PUT">
         <label for="name">Name:</label>

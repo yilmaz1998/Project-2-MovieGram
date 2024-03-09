@@ -6,7 +6,8 @@ const movieSchema = new mongoose.Schema({
     type: String,
     year: Number,
     actors: String,
-    user: {type:mongoose.Types.ObjectId, ref: 'user'}
+    user: {type:mongoose.Schema.Types.ObjectId, ref: 'user'},
+    
 })
 
 const movie = mongoose.model('movie', movieSchema) 

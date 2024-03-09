@@ -9,6 +9,7 @@ body {
     color: aliceblue;
     font-weight: 900;
     font-size: 30px;
+    font-family: "Truculenta", sans-serif;
 }
 
 a {
@@ -23,7 +24,7 @@ a:hover {
 div {
     display: flex;
     margin-top: 30px;
-    margin-left: 700px;
+    margin-left: 600px;
 }
 
 li {
@@ -33,6 +34,7 @@ li {
 #edit-btn {
     border: 2px solid white;
     margin-right: 20px;
+    margin-left: 20px
 }
 
 input {
@@ -47,6 +49,7 @@ input:hover {
 
 img {
     height: 400px;
+    width: 300px;
 }
 
 main {

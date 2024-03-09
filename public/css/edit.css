@@ -9,6 +9,8 @@ body {
     color: aliceblue;
     font-weight: 900;
     font-size: 30px;
+    text-align: center;
+    font-family: "Truculenta", sans-serif;
 }
 
 a {
@@ -40,5 +42,5 @@ form {
 input {
     background-color: #000000;
     color: white;
-    font-size: 30px;
+    font-size: 18px;
 }

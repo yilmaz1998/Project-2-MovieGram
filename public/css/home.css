@@ -8,12 +8,17 @@ body {
     background-size: 20px 20px;
     color: aliceblue;
     font-weight: 900;
+    font-family: "Truculenta", sans-serif;
 }
 
 h1 {
     font-size: 40px;
     text-align: center;
-    margin-bottom: 90px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: -5px;
 }
 
 div {
@@ -41,4 +46,13 @@ input {
 
 input:hover {
     color: #f40d0d;
+}
+img {
+    height: 400px;
+    width: 300px;
+}
+
+p {
+    text-align: center;
+    font-size: 25px;
 }

@@ -23,6 +23,14 @@ app.use('/movie', movieController)
 app.use('/user', userController)
 app.use('/session', sessionController)
 
+
+app.get('/', (req,res) => {
+    db.Movie.find({}).populate('user')
+    .then (data => {
+        res.render('home.ejs', {data})
+    })
+})
+
 app.listen(3000, (req, res) => {
     console.log('Server is running')
 })

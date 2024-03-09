@@ -11,17 +11,15 @@
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h1> My Movies </h1>
-    <% if (currentUser) { %>
-        <p> Welcome <%= currentUser.username %> </p>
-    <% } %>
+    <h1> MovieGram </h1>
     <div>
     <% data.forEach(function(item) { %>
         <h2><%= item.name %></h2>
         <img src="<%= item.img %>">
         <li>Type: <%= item.type %></li>
+        <li>Actors: <%= item.actors %></li>
         <li>Year: <%= item.year %></li>
-        <a href="/movie/<%= item._id %>">See more</a>
+        <li>Createdby: <%= item.user.username %></li>
        <% }) %>
     </div>
 </body>

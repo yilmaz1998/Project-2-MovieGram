@@ -44,9 +44,10 @@ router.put('/:id', (req,res) => {
 
 //CREATE ROUTE
 router.post('/', async (req,res) => {
-    req.body.user = req.session.currentUser._id
+    req.body.user = req.session.currentUser
     await movie.create(req.body)
     res.redirect('/movie')
+    console.log(req.body)
 })
 
 
