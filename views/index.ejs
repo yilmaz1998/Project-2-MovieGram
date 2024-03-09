@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieGram</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1> MovieGram </h1>
+    <div>
+    <% data.forEach(function(item) { %>
+        <h2><%= item.name %></h2>
+        <li>Type: <%= item.type %></li>
+        <li>Year: <%= item.year %></li>
+        <a href="/movie/<%= item._id %>">See more</a>
+       <% }) %>
+    </div>
+</body>
+</html>

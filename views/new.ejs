@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Movie</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+    <h1>Create New Movie</h1>
+    <form action="/movie" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Movie name"/>
+        <label for="image">Add Image:</label>
+        <input type="text" name="img" id="image" placeholder="Image url of movie"/>
+        <label for="type">Type</label>
+        <input type="text" name="type" id="type" placeholder="Movie type"/>
+        <label for="actor">Actors</label>
+        <input type="text" name="actors" id="actor" placeholder="Movie actors"/>
+        <label for="actor">Year</label>
+        <input type="text" name="year" id="year" placeholder="Movie year"/>
+        <input id="input" type="submit" value="Create Movie"/>
+    </form>
+    <a href="/movie">Go back</a>
+</body>
+</html>

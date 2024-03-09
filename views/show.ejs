@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.name %></title>
+    <link rel="stylesheet" href="/css/show.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+    <h1><%= data.name %></h1>
+    <img src="<%= data.img %>">
+    <li>Type: <%= data.type %></li>
+    <li>Actors: <%= data.actors %></li>
+    <li>Year: <%= data.year %></li>
+    <div>
+    <a id="edit-btn" href="/movie/<%= data._id %>/edit">Edit Movie</a>
+    <form method="POST" action="/movie/<%= data.id %>?_method=DELETE">
+        <input type="submit" value="Delete This Movie"/>
+    </form>
+</div>
+</main>
+</body>
+</html>

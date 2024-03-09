@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Movie</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1>Edit Movie</h1>
+    <form method="POST" action="/movie/<%= data._id %>?_method=PUT">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= data.name %>"/>
+        <label for="image">Add Image:</label>
+        <input type="text" name="img" id="image" value="<%= data.img %>"/>
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" value="<%= data.type %>"/>
+        <label for="actor">Actors:</label>
+        <input type="text" name="actors" id="actor" value="<%= data.actors %>"/>
+        <label for="actor">Year:</label>
+        <input type="text" name="year" id="year" value="<%= data.year %>"/>
+        <input id="input" type="submit" value="Edit Movie"/>
+    </form>
+    <a href="/movie/<%= data._id %>">Go back</a>
+</body>
+</html>
