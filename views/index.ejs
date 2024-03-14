@@ -12,9 +12,6 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <h1> My Movies </h1>
-    <% if (currentUser) { %>
-        <p> Welcome <%= currentUser.username %> </p>
-    <% } %>
     <div>
     <% data.forEach(function(item) { %>
         <h2><%= item.name %></h2>

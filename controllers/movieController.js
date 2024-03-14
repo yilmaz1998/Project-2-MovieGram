@@ -1,19 +1,20 @@
-const movie = require('../models/movie')
+const db = require('../models')
 const express = require('express')
 const router = express.Router();
 const isAuth = require('../controllers/isAuth')
 
-router.use(isAuth)
+// router.use(isAuth)
 
 
 // I.N.D.U.C.E.S.
 
 //INDEX ROUTE
 router.get('/', (req,res) => {
-    movie.find({user: req.session.currentUser._id})
-    .then(data => {
-        res.render('index.ejs', {data, currentUser: req.session.currentUser})
-    })
+    // db.Movie.find({user: req.session.currentUser})
+    // .then(data => {
+    //     res.render('index.ejs', {data, currentUser: req.session.currentUser})
+    // })
+    res.send(req.session)
 })
 
 
@@ -24,7 +25,7 @@ router.get('/new', (req,res) => {
 
 //DELETE ROUTE
 router.delete('/:id', (req,res) => {
-    movie.findByIdAndDelete(req.params.id)
+    db.Movie.findByIdAndDelete(req.params.id)
     .then(() => {
        res.redirect('/movie')
     })
@@ -33,7 +34,7 @@ router.delete('/:id', (req,res) => {
 
 //UPDATE ROUTE 
 router.put('/:id', (req,res) => {
-    movie.findByIdAndUpdate(
+    db.Movie.findByIdAndUpdate(
         req.params.id, 
         req.body, 
         {new: true}
@@ -53,7 +54,7 @@ router.post('/', async (req,res) => {
 
 //EDIT ROUTE
 router.get('/:id/edit', (req,res) => {
-    movie.findById(req.params.id)
+    db.Movie.findById(req.params.id)
     .then(data => {
         res.render('edit.ejs', {data, currentUser: req.session.currentUser})
     })
@@ -62,9 +63,17 @@ router.get('/:id/edit', (req,res) => {
 
 //SHOW PAGE 
 router.get('/:id', (req,res) => {
-    movie.findById(req.params.id)
+    db.Movie.findById(req.params.id)
     .then(data => {
         res.render('show.ejs', {data, currentUser: req.session.currentUser})
+    })
+})
+
+// MOVIE/ID/COMMENT ROUTE, SHOWS EACH MOVIES' COMMENTS
+router.get('/:id/comment', (req,res) => {
+    db.Comment.find({}).populate('user')
+    .then (data => {
+        res.render('comment.ejs', {data, currentUser: req.session.currentUser})
     })
 })
 

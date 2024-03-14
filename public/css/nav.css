@@ -1,5 +1,9 @@
 nav {
     font-size: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+#welcome {
+    font-size: 40px;
 }

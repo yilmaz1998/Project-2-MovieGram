@@ -13,5 +13,6 @@ db.on('disconnected', ()=> {console.log('connection disconnected')})
 
 module.exports = {
     Movie: require('./movie'),
-    User: require('./user')
+    User: require('./user'),
+    Comment: require('./comment')
 }

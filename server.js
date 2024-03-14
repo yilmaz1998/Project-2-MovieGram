@@ -7,6 +7,8 @@ const session = require('express-session')
 const movieController = require('./controllers/movieController');
 const userController = require('./controllers/userController')
 const sessionController = require('./controllers/sessionController')
+const commentController = require('./controllers/comment')
+const isAuth = require('./controllers/isAuth')
 
 app.use(express.json())
 app.use(express.urlencoded())
@@ -22,12 +24,23 @@ app.use(session({
 app.use('/movie', movieController)
 app.use('/user', userController)
 app.use('/session', sessionController)
+app.use('/comment', commentController)
+app.use(isAuth)
 
 
+// ALL MOVIES SHOW ROUTE
 app.get('/', (req,res) => {
     db.Movie.find({}).populate('user')
     .then (data => {
-        res.render('home.ejs', {data})
+        res.render('home.ejs', {data, currentUser: req.session.currentUser})
+    })
+})
+
+// ALL MOVIES DETAILS ROUTE
+app.get('/:id', (req, res) => {
+    db.Movie.findById(req.params.id).populate('user')
+    .then(data => {
+        res.render('detail.ejs', {data, currentUser:req.session.currentUser})
     })
 })
 

@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieGram</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/detail.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h1> MovieGram </h1>
-    <div> 
-    <% data.forEach(function(item) { %>
-        <h2><%= item.name %></h2>
-        <img src="<%= item.img %>">
-        <li>Createdby: <%= item.user.username %></li>
-        <li><a href="/<%= item._id %>">See More</a></li>
-       <% }) %>
-    </div>
+    <main>
+    <h1><%= data.name %></h1>
+    <img src="<%= data.img %>">
+    <li>Type: <%= data.type %></li>
+    <li>Actors: <%= data.actors %></li>
+    <li>Year: <%= data.year %></li>
+    <li>Createdby: <%= data.user.username %></li>
+    <li><a href="/comment">Make a Comment</a></li>
+    <li><a href="movie/<%= data._id %>/comment">See Comments</a></li>
+    <a id="edit-btn" href="/">Go Back</a>
+</main>
 </body>
 </html>
