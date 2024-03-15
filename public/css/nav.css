@@ -3,7 +3,3 @@ nav {
     display: flex;
     justify-content: space-between;
 }
-
-#welcome {
-    font-size: 40px;
-}

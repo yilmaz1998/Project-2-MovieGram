@@ -12,11 +12,11 @@
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <% data.forEach(function(item) { %>
+    <% data.comments.forEach(function(item) { %>
         <li>Movie Comment: <%= item.comment %></li>
         <li>Commented by: <%= item.user.username %></li>
        <% }) %>
-    <a href="/">Go Back</a>
+    <a href="/movie/every">Go Back</a>
     <div>
 </body>
 </html>

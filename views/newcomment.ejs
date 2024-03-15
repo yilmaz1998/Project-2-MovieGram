@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieGram</title>
     <link rel="stylesheet" href="/css/edit.css">
-    <link rel="stylesheet" href="/css/edit.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Make a comment </h1>
-    <form action="/comment" method="POST">
+    <form action="/movie/every/<%= data._id %>" method="POST">
         <label for="name">Comment:</label>
-        <input type="text" name="comment" id="comment" placeholder="Comment"/>
+        <textarea name="comment" id="comment" placeholder="Comment" style="font-size: 16px; padding: 8px; width: 300px; height: 200px;"></textarea>
         <input id="input" type="submit" value="OK"/>
     </form>
-    <a href="/">Go back</a>
+    <a href="/movie/every">Go back</a>
 </body>
 </html>

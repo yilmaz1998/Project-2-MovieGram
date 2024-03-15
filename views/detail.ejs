@@ -18,8 +18,8 @@
     <li>Actors: <%= data.actors %></li>
     <li>Year: <%= data.year %></li>
     <li>Createdby: <%= data.user.username %></li>
-    <li><a href="/comment">Make a Comment</a></li>
-    <li><a href="movie/<%= data._id %>/comment">See Comments</a></li>
+    <li><a href="/movie/every/<%= data._id %>/comment">Make a Comment</a></li>
+    <li><a href="/movie/every/<%= data._id %>/comments">See Comments</a></li>
     <a id="edit-btn" href="/">Go Back</a>
 </main>
 </body>
