@@ -16,7 +16,7 @@ such as name, type, image and actors. You can also make comments to other users'
 <li>HTML</li>
 <li>MongoDB</li>
 <li>Postman 2</li>
-<li>Youtube (for tutorial)</li>
+<li>Youtube</li>
 
 # User Stories
 <li>Users should be able to log in or sign up to app</li>
@@ -30,3 +30,8 @@ such as name, type, image and actors. You can also make comments to other users'
 <li>I've practiced with isAuthenticated and sessions. </li>
 <li>I've made connections with users, movies and comments. </li>
 <li>The hardest time I had is adding form action to post request for comments </li>
+
+# References 
+<li>Classroom projects</li>
+<li>ChatGPT for debugging and questions</li>
+<li>Youtube (For tutorials)</li>
