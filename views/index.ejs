@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieGram</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
-</head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
 <body>
     <%- include('./partials/nav.ejs') %>
     <h1> My Movies </h1>
-    <div>
+    <div class="container">
     <% data.forEach(function(item) { %>
+        <div class="item">
         <h2><%= item.name %></h2>
         <img src="<%= item.img %>">
-        <li>Type: <%= item.type %></li>
-        <li>Year: <%= item.year %></li>
-        <a href="/movie/<%= item._id %>">See more</a>
+        <p class="type">Type: <%= item.type %></p>
+        <p class="type"> Year: <%= item.year %></p>
+        <a class="see-more" href="/movie/<%= item._id %>">See details</a>
+    </div>
        <% }) %>
     </div>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

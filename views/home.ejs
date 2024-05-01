@@ -6,19 +6,23 @@
     <title>MovieGram</title>
     <link rel="stylesheet" href="/css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
     <h1> All Movies  </h1>
-    <div> 
+    <div class="container">
     <% data.forEach(function(item) { %>
+        <div class="item">
         <h2><%= item.name %></h2>
         <img src="<%= item.img %>">
-        <li>Createdby: <%= item.user.username %></li>
-        <li><a href="/movie/every/<%= item._id %>">See More</a></li>
+        <p class="create">Createdby: <%= item.user.username %></p>
+        <a class="see-more" href="/movie/every/<%= item._id %>">See Movie Details</a>
+        </div>
        <% }) %>
     </div>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

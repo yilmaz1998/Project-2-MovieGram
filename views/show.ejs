@@ -7,23 +7,26 @@
     <link rel="stylesheet" href="/css/show.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
     <main>
     <h1><%= data.name %></h1>
     <img src="<%= data.img %>">
-    <li>Type: <%= data.type %></li>
-    <li>Actors: <%= data.actors %></li>
-    <li>Year: <%= data.year %></li>
-    <div>
-    <a id="edit-btn" href="/movie/<%= data._id %>/edit">Edit Movie</a>
+    <div class="detail">
+    <p>Type: <%= data.type %></p>
+    <p>Actors: <%= data.actors %></p>
+    <p>Year: <%= data.year %></p>
+</div>
+    <div class="buttons">
+    <a class="make-comment" id="edit-btn" href="/movie/<%= data._id %>/edit">Edit Movie</a>
     <form method="POST" action="/movie/<%= data.id %>?_method=DELETE">
-        <input type="submit" value="Delete This Movie"/>
+        <input class="see-comment" type="submit" value="Delete This Movie"/>
     </form>
-    <a id="edit-btn" href="/movie/">Go Back</a>
+    <a class="see-more" id="edit-btn" href="/movie/">Go Back</a>
 </div>
 </main>
+<%- include('./partials/footer.ejs') %>
 </body>
 </html>

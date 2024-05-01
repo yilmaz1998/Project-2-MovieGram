@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="box">
     <h1>MovieGram</h1>
     <form action="/user" method="POST">
-        Username: <input required type="text" name="username"/><br>
-        Password: <input required type="text" name="password"><br>
-        Mail: <input required type="text" name="mail"/><br>
-        Location: <input type="text" name="location"/><br>
-        <input type="submit" name="" value="Sign Up"/>
+        Username: <input class="input" required type="text" name="username"/><br>
+        Password: <input class="input" required type="text" name="password"><br>
+        G-Mail: <input class="input" required type="text" name="mail"/><br>
+        Location: <input class="input" type="text" name="location"/><br>
+        <input class="see-more" type="submit" name="" value="Sign Up"/>
     </form>
-    <a href="/session/new">Log In</a>
+    <a class="log-in" href="/session/new">Go Back to Log In page</a>
+</div>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

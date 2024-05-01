@@ -6,10 +6,12 @@
     <title>Edit Movie</title>
     <link rel="stylesheet" href="/css/edit.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <%- include('./partials/nav.ejs') %>
     <h1>Edit Movie</h1>
     <form method="POST" action="/movie/<%= data._id %>?_method=PUT">
         <label for="name">Name:</label>
@@ -22,8 +24,9 @@
         <input type="text" name="actors" id="actor" value="<%= data.actors %>"/>
         <label for="actor">Year:</label>
         <input type="text" name="year" id="year" value="<%= data.year %>"/>
-        <input id="input" type="submit" value="Edit Movie"/>
+        <input class="edit" id="input" type="submit" value="Edit Movie"/>
     </form>
-    <a href="/movie/<%= data._id %>">Go back</a>
+    <a class="see-more" href="/movie/<%= data._id %>">Go back</a>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

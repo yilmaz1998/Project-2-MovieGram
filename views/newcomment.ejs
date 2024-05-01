@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieGram</title>
-    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/comment.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Make a comment </h1>
+    <%- include('./partials/nav.ejs') %>
+    <h1>Make a comment for <%= data.name %> </h1>
     <form action="/movie/every/<%= data._id %>" method="POST">
-        <label for="name">Comment:</label>
-        <textarea name="comment" id="comment" placeholder="Comment" style="font-size: 16px; padding: 8px; width: 300px; height: 200px;"></textarea>
-        <input id="input" type="submit" value="OK"/>
+    <label for="comment" class="comment-label">Leave a Comment:</label>
+    <textarea name="comment" id="comment" class="comment-textarea" placeholder="Write your comment here..."></textarea>
+    <button type="submit" class="comment-button">Submit</button>
+     <a class="see-more" href="/movie/every">Go back</a>
     </form>
-    <a href="/movie/every">Go back</a>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="box">
     <h1>MovieGram</h1>
     <form action="/session" method="POST">
-        Username: <input required type="text" name="username"/><br>
-        Password: <input required type="password" name="password"><br>
-        <input type="submit" name="" value="Login"/>
+        Username: <input class="input" required type="text" name="username"/><br>
+        Password: <input class="input" required type="password" name="password"><br>
+        <input class="log-in" type="submit" name="" value="Login"/>
     </form>
     <p>Welcome to MovieGram, you can share your favorite movies all over the world. If you don't have an account, you can sign up below.</p>
-    <a href="/user/new">Sign Up</a>
+    <a class="see-more" href="/user/new">Sign Up</a>
+</div>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

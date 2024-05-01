@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieGram</title>
-    <link rel="stylesheet" href="/css/show.css">
-    <link rel="stylesheet" href="/css/edit.css">
+    <link rel="stylesheet" href="/css/seecomments.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <% data.comments.forEach(function(item) { %>
-        <li>Movie Comment: <%= item.comment %></li>
-        <li>Commented by: <%= item.user.username %></li>
-       <% }) %>
+    <div class="comment">
+    <div class="image">
+    <h1><%= data.name %></h1>
+    <img src="<%= data.img %>">
+  </div>
+  <div class="comments">
+    <% if (data.comments.length === 0) { %>
+        <h1 class="no-comment">No comments for this movie.</h1>
+    <% } else { %>
+        <h1>Comments</h1>
+        <% data.comments.forEach(function(item) { %>
+            <div class="item">
+            <p>Comment: <%= item.comment %></p>
+            <p>Commented by: <%= item.user.username %></p>
+        </div>
+        <% }) %>
+    <% } %>
     <a href="/movie/every">Go Back</a>
-    <div>
+</div>
+</div>
+        <%- include('./partials/footer.ejs') %>
 </body>
 </html>

@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MovieGram</title>
-    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/details.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
     <main>
     <h1><%= data.name %></h1>
     <img src="<%= data.img %>">
-    <li>Type: <%= data.type %></li>
-    <li>Actors: <%= data.actors %></li>
-    <li>Year: <%= data.year %></li>
-    <li>Createdby: <%= data.user.username %></li>
-    <li><a href="/movie/every/<%= data._id %>/comment">Make a Comment</a></li>
-    <li><a href="/movie/every/<%= data._id %>/comments">See Comments</a></li>
-    <a id="edit-btn" href="/movie/every">Go Back</a>
+    <div class="box">
+    <p class="detail">Type: <%= data.type %></p>
+    <p class="detail">Actors: <%= data.actors %></p>
+    <p class="detail">Year: <%= data.year %></p>
+    <p class="detail">Createdby: <%= data.user.username %></p>
+</div>
+    <a class="make-comment" href="/movie/every/<%= data._id %>/comment">Make a Comment</a>
+    <a class="see-comment" href="/movie/every/<%= data._id %>/comments">See Comments</a>
+    <a class="see-more" href="/movie/every">Go Back</a>   
 </main>
+ <%- include('./partials/footer.ejs') %>
 </body>
 </html>
