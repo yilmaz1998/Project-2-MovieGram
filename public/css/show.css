@@ -20,7 +20,7 @@ img {
 
 .buttons {
     display: flex;
-    margin-left: 42%;
+    margin-left: 39%;
     margin-bottom: 10px;
 }
 
@@ -60,6 +60,7 @@ img {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-family: "Orbitron", sans-serif;
 }
 
 .see-comment:hover {

@@ -24,7 +24,7 @@
         <% data.comments.forEach(function(item) { %>
             <div class="item">
             <p>Comment: <%= item.comment %></p>
-            <p>Commented by: <%= item.user.username %></p>
+            <p>Commented by: <%= item.user ? item.user.username : 'Unknown' %></p>
         </div>
         <% }) %>
     <% } %>

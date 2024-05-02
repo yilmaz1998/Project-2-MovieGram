@@ -2,6 +2,7 @@ const db = require('../models')
 const express = require('express')
 const router = express.Router();
 const isAuth = require('../controllers/isAuth')
+const mongoose = require('mongoose')
 
 router.use(isAuth)
 
@@ -38,15 +39,23 @@ router.post('/every/:id', async (req, res) => {
 
 // ALL MOVIES SHOW ROUTE
 router.get('/every', (req,res) => {
-    db.Movie.find({}).populate('user')
+    db.Movie.find({ user: { $ne: req.session.currentUser } }).populate('user')
     .then (data => {
         res.render('home.ejs', {data, currentUser: req.session.currentUser})
     })
 })
 
+function validateMovieId(req, res, next) {
+    const movieId = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(movieId)) {
+        return res.render('404.ejs');
+    }
+    next(); 
+}
+
 
 // ALL MOVIES DETAILS ROUTE
-router.get('/every/:id', (req, res) => {
+router.get('/every/:id', validateMovieId, (req, res) => {
     db.Movie.findById(req.params.id).populate('user')
     .then(data => {
         res.render('detail.ejs', {data, currentUser:req.session.currentUser})
@@ -109,7 +118,7 @@ router.get('/:id/edit', (req,res) => {
 
 
 //SHOW PAGE 
-router.get('/:id', (req,res) => {
+router.get('/:id', validateMovieId, (req,res) => {
     db.Movie.findById(req.params.id)
     .then(data => {
         res.render('show.ejs', {data, currentUser: req.session.currentUser})

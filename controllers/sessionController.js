@@ -15,7 +15,7 @@ router.post('/', async (req,res) => {
         return res.send('WRONG USER')
     }else if (await bcrypt.compareSync(req.body.password, foundUser.password)){
         req.session.currentUser = foundUser
-        res.redirect('/movie')
+        res.redirect('/movie/every')
     }else {
         res.send('WRONG PASSWORD')
     }
