@@ -2,10 +2,10 @@
 <nav>
     <a href="/movie/every">Home</a>
     <a href="/movie">My Movies</a>
-    <% if (currentUser) { %>
-        <p id="welcome"> Welcome <%= currentUser.username %> </p>
-    <% } %>
     <a href="/movie/new">Create New Movie</a>
+    <% if (currentUser) { %>
+        <p id="welcome"> Welcome, <%= currentUser.username %> </p>
+    <% } %>
     <form action="/session/?_method=DELETE" method='POST'>
     <input class="log-out" type="submit" value="Log Out" />
     </form>
