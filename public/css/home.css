@@ -3,10 +3,11 @@ body {
     margin: 0;
     background-image: url("../pic/7eeba468cd2fdca160f55b3878b60699.jpg");
     font-family: "Orbitron", sans-serif;
+    min-width: 200px;
 }
 
 h1 {
-    margin-top: 60px;
+    margin-top: 80px;
     text-align: center;
 }
 
@@ -50,4 +51,16 @@ img {
 
 .create {
     font-size: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+    .box h1 {
+        font-size: 20px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 20px;
+    }
 }

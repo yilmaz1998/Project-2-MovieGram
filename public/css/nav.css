@@ -58,3 +58,13 @@ footer {
 footer p {
     margin-bottom: 10px
 }
+
+
+@media only screen and (max-width: 500px) {
+    .log-out {
+        padding: 0;
+        margin: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}

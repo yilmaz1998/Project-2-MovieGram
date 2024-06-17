@@ -15,9 +15,11 @@
     <form action="/movie/every/<%= data._id %>" method="POST">
     <label for="comment" class="comment-label">Leave a Comment:</label>
     <textarea name="comment" id="comment" class="comment-textarea" placeholder="Write your comment here..."></textarea>
+    <div  class="buttons">
     <button type="submit" class="comment-button">Submit</button>
-     <a class="see-more" href="/movie/every">Go back</a>
     </form>
+    <a class="see-more" href="/movie/every">Go back</a>
+</div>
     <%- include('./partials/footer.ejs') %>
 </body>
 </html>
